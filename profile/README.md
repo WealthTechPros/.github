@@ -23,15 +23,9 @@ sits between platforms and advisers.
 
 ## In the open
 
-A growing set of our work is public:
-
-- [`sgd-public`](https://github.com/WealthTechPros/sgd-public) — public, redacted
-  distribution of the SGD methodology
-- [`sgd-assets`](https://github.com/WealthTechPros/sgd-assets) — SGD explainer
-  diagrams and marketing visuals
-- [`adviser-mcp`](https://github.com/WealthTechPros/adviser-mcp) — *(coming soon)*
-  authenticated, audited MCP server for adviser tooling
+- [`sgd-public`](https://github.com/WealthTechPros/sgd-public) — public distribution of the SGD methodology
+- [`adviser-mcp`](https://github.com/WealthTechPros/adviser-mcp) — authenticated, audited MCP server for adviser tooling
 
 ---
 
-*Interested in working with us? Get in touch via [wealthtechpros.com](https://wealthtechpros.com).*
+*Interested in working with us? Visit [wealthtechpros.com](https://wealthtechpros.com).*
