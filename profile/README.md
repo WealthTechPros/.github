@@ -12,7 +12,7 @@ sits between platforms and advisers.
 
 ## What we do
 
-- **AI code governance** — *SGD (Specification-Governed Development):* a framework
+- **AI code governance** — *SGE (Specification-Governed Engineering):* a framework
   and GitHub App that keep AI-generated code coherent, traceable, and auditable, so
   regulated firms can adopt AI coding tools with confidence.
 - **Platform migration & client data** — FCA-aware platform migration and
@@ -23,7 +23,7 @@ sits between platforms and advisers.
 
 ## In the open
 
-- [`sgd-public`](https://github.com/WealthTechPros/sgd-public) — public distribution of the SGD methodology
+- [`sge-public`](https://github.com/WealthTechPros/sge-public) — public distribution of the SGE methodology
 - [`adviser-mcp`](https://github.com/WealthTechPros/adviser-mcp) — authenticated, audited MCP server for adviser tooling
 
 ---
