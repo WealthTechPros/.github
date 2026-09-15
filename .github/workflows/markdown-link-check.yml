@@ -1,0 +1,33 @@
+# Real, unconditional required-status-check for wtp-org#779 (7 gate-carrying
+# repos where an empty CI rollup lets the #778 fail-closed auto-merge gate
+# silently proceed on the `pr-reviewed` label alone). This repo carries no
+# application code — just profile/README.md, the public org profile — so a
+# markdown link check is the check that can actually fail on a real mistake
+# (a broken wealthtechpros.com or GitHub link) rather than a no-op built
+# purely to satisfy the gate.
+#
+# Runs on every PR, no path filter: this repo is markdown-only, so scoping to
+# `**/*.md` would exclude nothing in practice, but is spelled out anyway so a
+# future non-markdown file added here doesn't silently stop triggering this
+# check (see wtp-org#779's "do not require a check that does not run on
+# every PR" caution).
+name: Markdown link check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check-links:
+    name: Check links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: gaurav-nelson/github-action-markdown-link-check@1.0.17
+        with:
+          use-quiet-mode: "yes"
+          use-verbose-mode: "yes"
