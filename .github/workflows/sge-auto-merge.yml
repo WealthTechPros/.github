@@ -53,7 +53,15 @@ concurrency:
 jobs:
   approve-and-merge:
     # Only run when the review gate is set and no human-hold label is present.
+    #
+    # LABEL-NAME GUARD (#17). `labeled` fires for EVERY label, and the event's
+    # head.sha is the PR head at the moment that label was added. Without this
+    # guard, adding any unrelated label to a PR that still carries `pr-reviewed`
+    # after a later push would bind EVENT_SHA to the new, unreviewed head and
+    # merge it, defeating COMMIT BINDING. Only the `pr-reviewed` label event
+    # itself is the review signal (same guard as sge's copy, sge#2845).
     if: >-
+      github.event.label.name == 'pr-reviewed' &&
       github.event.pull_request.draft == false &&
       contains(github.event.pull_request.labels.*.name, 'pr-reviewed') &&
       !contains(github.event.pull_request.labels.*.name, 'hold') &&

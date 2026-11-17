@@ -28,8 +28,13 @@ jobs:
     name: Markdown link check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
-      - uses: gaurav-nelson/github-action-markdown-link-check@1.0.17
+      # Actions pinned to full commit SHAs (#17): a mutable tag on a third-party
+      # action can be repointed. The link-check action's repo is archived, so
+      # 1.0.17 is its final release.
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: gaurav-nelson/github-action-markdown-link-check@3c3b66f1f7d0900e37b71eca45b63ea9eedfce31 # 1.0.17
         with:
           use-quiet-mode: "yes"
           use-verbose-mode: "yes"
